@@ -1,3 +1,5 @@
+import 'package:clean_architecture_app/presentation/home/cart/cart_screen.dart';
+import 'package:clean_architecture_app/presentation/profile/profile_screen.dart';
 import 'package:clean_architecture_app/presentation/splash/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -26,15 +28,13 @@ class _HomeScreenState extends State<HomeScreen> {
               Container(
                 color: Colors.green,
               ),
-              Container(
-                color: Colors.blue,
+              CartScreen(
+                onShopping: () => setState(() => currentIndex = 0),
               ),
               Container(
                 color: Colors.amber,
               ),
-              Container(
-                color: Colors.cyanAccent,
-              ),
+              const ProfileScreen()
             ],
           ),
         ),

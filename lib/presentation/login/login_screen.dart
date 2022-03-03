@@ -1,5 +1,6 @@
 import 'package:clean_architecture_app/presentation/home/home_screen.dart';
 import 'package:clean_architecture_app/presentation/splash/theme.dart';
+import 'package:clean_architecture_app/presentation/widgets/delivery_button.dart';
 import 'package:flutter/material.dart';
 
 const logoSize = 40.0;
@@ -92,24 +93,13 @@ class LoginScreen extends StatelessWidget {
               )),
           Padding(
               padding: const EdgeInsets.all(25),
-              child: InkWell(
+              child: DeliveryButton(
+                text: 'Login',
                 onTap: () {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
                     builder: (_) => const HomeScreen(),
                   ));
                 },
-                child: Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4),
-                      gradient: LinearGradient(colors: deliveryGradient)),
-                  child: Text(
-                    'Login',
-                    style:
-                        theme.textTheme.button!.copyWith(color: Colors.white),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
               )),
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DeliveryColors {
   static const purple = Color(0XFF5117AC);
@@ -12,7 +13,6 @@ class DeliveryColors {
 }
 
 final deliveryGradient = [DeliveryColors.green, DeliveryColors.purple];
-/* 
 final _borderLight = OutlineInputBorder(
   borderRadius: BorderRadius.circular(10),
   borderSide: const BorderSide(
@@ -25,13 +25,43 @@ final _borderDark = OutlineInputBorder(
 );
 
 final lightTheme = ThemeData(
+  appBarTheme: AppBarTheme(
+      color: DeliveryColors.white,
+      toolbarTextStyle: GoogleFonts.poppinsTextTheme()
+          .apply(
+            bodyColor: DeliveryColors.purple,
+            displayColor: DeliveryColors.purple,
+          )
+          .copyWith(
+            headline6: const TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: DeliveryColors.purple,
+            ),
+          )
+          .bodyText2,
+      titleTextStyle: GoogleFonts.poppinsTextTheme()
+          .apply(
+            bodyColor: DeliveryColors.purple,
+            displayColor: DeliveryColors.purple,
+          )
+          .copyWith(
+            headline6: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: DeliveryColors.purple),
+          )
+          .headline6,
+      centerTitle: true),
   canvasColor: DeliveryColors.white,
-  colorScheme:
-      ColorScheme.fromSwatch().copyWith(secondary: DeliveryColors.purple),
+  cardColor: DeliveryColors.white,
+  colorScheme: ColorScheme.fromSwatch().copyWith(
+      primary: DeliveryColors.purple, secondary: DeliveryColors.purple),
   textTheme: GoogleFonts.poppinsTextTheme().apply(
     bodyColor: DeliveryColors.purple,
     displayColor: DeliveryColors.purple,
   ),
+  bottomAppBarColor: DeliveryColors.veryLightGrey,
   inputDecorationTheme: InputDecorationTheme(
       border: _borderLight,
       contentPadding: EdgeInsets.zero,
@@ -46,8 +76,35 @@ final lightTheme = ThemeData(
 );
 
 final darkTheme = ThemeData(
-  colorScheme:
-      ColorScheme.fromSwatch().copyWith(secondary: DeliveryColors.white),
+  appBarTheme: AppBarTheme(
+      color: DeliveryColors.purple,
+      toolbarTextStyle: GoogleFonts.poppinsTextTheme()
+          .apply(
+            bodyColor: DeliveryColors.purple,
+            displayColor: DeliveryColors.purple,
+          )
+          .copyWith(
+              headline6: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: DeliveryColors.white))
+          .bodyText2,
+      titleTextStyle: GoogleFonts.poppinsTextTheme()
+          .apply(
+            bodyColor: DeliveryColors.purple,
+            displayColor: DeliveryColors.purple,
+          )
+          .copyWith(
+              headline6: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: DeliveryColors.white))
+          .headline6,
+      centerTitle: true),
+  bottomAppBarColor: Colors.transparent,
+  cardColor: DeliveryColors.grey,
+  colorScheme: ColorScheme.fromSwatch()
+      .copyWith(primary: DeliveryColors.white, secondary: DeliveryColors.white),
   canvasColor: DeliveryColors.grey,
   scaffoldBackgroundColor: DeliveryColors.dark,
   textTheme: GoogleFonts.poppinsTextTheme().apply(
@@ -67,4 +124,4 @@ final darkTheme = ThemeData(
         fontSize: 10,
       ),
       prefixIconColor: DeliveryColors.white),
-); */
+);
